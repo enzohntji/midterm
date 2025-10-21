@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz 4 - Toggle Dark Mode (ACT 4)</title>
+    <style>
+        body {
+            background-color: pink;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+        .dark-mode {
+            background-color: black;
+            color: pink;
+        }
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        button {
+            background: rgb(82, 0, 0);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: rgb(120, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Haloooo!</h1>
+    <p id="modeText">Light and Dark Mode Toggle example</p>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const p = document.getElementById("modeText");
+            if (document.body.classList.contains("dark-mode")) {
+                p.innerText = "Welcome to Dark Mode!";
+            } else {
+                p.innerText = "Back to Light Mode!";
+            }
+        }
+    </script>
+</body>
+</html>

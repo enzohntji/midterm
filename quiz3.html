@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 3 - Dark Mode Toggle</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+        .dark-mode {
+            background-color: rgb(82, 0, 0);
+            color: rgb(255, 255, 255);
+        }
+        .section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section h1, .section p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-top: 20px;
+        }
+        button {
+            background: rgb(82, 0, 0);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: rgb(120, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <h1>Lourence Hentji I. Osma</h1>
+        <p>Light and Dark Mode Toggle Example</p>
+        <div>
+            <img src="main.png" alt="Styled Image">
+        </div>
+    </section>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>

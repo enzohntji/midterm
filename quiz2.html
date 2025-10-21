@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hentji Card</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #000;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      margin: 0;
+    }
+
+    .card {
+      width: 300px;
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 25%;
+      object-fit: cover;
+      padding: 15px;
+    }
+
+    .card h1 {
+      margin: 10px 0 5px;
+      color: #000;
+    }
+
+    .card h5 {
+      margin: 0;
+      color: #333;
+      font-weight: normal;
+    }
+
+    #btn-aboutme {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #btn-aboutme:hover {
+      background-color: coral;
+    }
+
+    #info {
+      margin-top: 15px;
+      color: #000;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="main.png" class="img" alt="Profile Image" />
+    <h1>Hi! I'm Hentji.</h1>
+    <h5>I'm a full-stack developer based in PH.</h5>
+    <button id="btn-aboutme">ABOUT ME</button>
+    <div id="info" class="hide">
+      <p>I'm a self-made programmer.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btnAboutMe = document.getElementById("btn-aboutme");
+      const infoDiv = document.getElementById("info");
+
+      btnAboutMe.addEventListener("click", function () {
+        const isHidden = infoDiv.classList.contains("hide");
+
+        infoDiv.classList.toggle("hide");
+        btnAboutMe.textContent = isHidden ? "Show Less" : "ABOUT ME";
+      });
+    });
+  </script>
+</body>
+</html>
